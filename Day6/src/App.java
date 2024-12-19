@@ -28,6 +28,17 @@ public class App {
         }
         int posicion[] = position(tablero);
         System.out.println(posicion[0] + "" + posicion[1]);
+        for (int i=0; i<5; i++){
+            move(posicion, tablero);
+            posicion = position(tablero);
+            System.out.println(posicion[0] + "" + posicion[1]);
+            for (int x=0; x<10; x++) {
+                for (int y=0; y<10; y++) {
+                    System.out.print(tablero[x][y]);
+                }
+                System.out.println("");
+            }
+        }
     }
 
     public static int[] position(Character[][] tablero){
@@ -44,5 +55,22 @@ public class App {
             }
         }
         return posXY;
+    }
+
+    public static void move(int poxXY[], Character[][] tablero) {
+        if (tablero[poxXY[0]][poxXY[1]] == '^') {
+            tablero[poxXY[0]-1][poxXY[1]] = '^';
+            tablero[poxXY[0]][poxXY[1]] = 'X';
+        } else if (tablero[poxXY[0]][poxXY[1]] == '>') {
+            tablero[poxXY[0]][poxXY[1]+1] = '>';
+            tablero[poxXY[0]][poxXY[1]] = 'X';
+        } else if (tablero[poxXY[0]][poxXY[1]] == '<') {
+            tablero[poxXY[0]][poxXY[1]-1] = '<';
+            tablero[poxXY[0]][poxXY[1]] = 'X';
+        } else if (tablero[poxXY[0]][poxXY[1]] == 'v') {
+            tablero[poxXY[0]+1][poxXY[1]] = 'v';
+            tablero[poxXY[0]][poxXY[1]] = 'X';
+        }
+
     }
 }

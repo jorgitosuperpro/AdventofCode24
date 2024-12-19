@@ -16,6 +16,7 @@ public class App {
                 lineas.add(scanner.nextLine());
             }
         }
+        scanner.close();
         int suma_validas = 0;
         for (String linea: lineas) {
             int length = array_numeros(linea).toArray().length;
