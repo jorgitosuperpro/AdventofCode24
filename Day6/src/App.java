@@ -28,7 +28,8 @@ public class App {
         }
         int posicion[] = position(tablero);
         System.out.println(posicion[0] + "" + posicion[1]);
-        for (int i=0; i<5; i++){
+        for (int i=0; i<49; i++){
+            checkObstacle(posicion, tablero);
             move(posicion, tablero);
             posicion = position(tablero);
             System.out.println(posicion[0] + "" + posicion[1]);
@@ -71,6 +72,20 @@ public class App {
             tablero[poxXY[0]+1][poxXY[1]] = 'v';
             tablero[poxXY[0]][poxXY[1]] = 'X';
         }
-
+    }
+    //comprueba obstaculo if simbolo mas obstaculo en esa posicion +1 gira a derexa
+    public static void checkObstacle(int posXY[], Character[][] tablero) {
+        if (tablero[posXY[0]][posXY[1]] == '^' && tablero[posXY[0]-1][posXY[1]] == '#') {
+            tablero[posXY[0]][posXY[1]] = '>';
+        }
+        if (tablero[posXY[0]][posXY[1]] == '>' && tablero[posXY[0]][posXY[1]+1] == '#') {
+            tablero[posXY[0]][posXY[1]] = 'v';
+        }
+        if (tablero[posXY[0]][posXY[1]] == 'v' && tablero[posXY[0]+1][posXY[1]] == '#') {
+            tablero[posXY[0]][posXY[1]] = '<';
+        }
+        if (tablero[posXY[0]][posXY[1]] == '<' && tablero[posXY[0]][posXY[1]-1] == '#') {
+            tablero[posXY[0]][posXY[1]] = '^';
+        }
     }
 }
