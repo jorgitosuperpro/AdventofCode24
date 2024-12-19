@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Day05",
+            "request": "launch",
+            "mainClass": "Day05",
+            "projectName": "AdventofCode24_5afe7d52"
+        },
+        {
+            "type": "java",
+            "name": "App2",
+            "request": "launch",
+            "mainClass": "App2",
+            "projectName": "AdventofCode24_5afe7d52"
+        },
+        {
+            "type": "java",
+            "name": "App1",
+            "request": "launch",
+            "mainClass": "App1",
+            "projectName": "AdventofCode24_5afe7d52"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "AdventofCode24_5afe7d52"
+        }
+    ]
+}
